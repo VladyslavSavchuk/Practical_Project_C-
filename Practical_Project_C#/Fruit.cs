@@ -32,5 +32,17 @@
         {
             return $"Name: {_name} \nColor: {_color}";
         }
+
+        public virtual void Input(StreamReader reader)
+        {
+                _name = reader.ReadLine();
+                _color = reader.ReadLine();
+        }
+
+        public virtual void Print(StreamWriter writer)
+        {
+            writer.WriteLine(_name);
+            writer.WriteLine(_color);
+        }
     }
 }

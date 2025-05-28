@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Practical_Project_C_
 {
-    internal class Citrus : Fruit
+    public class Citrus : Fruit
     {
         /*
          * Create derived class Citrus
@@ -40,6 +40,18 @@ namespace Practical_Project_C_
         public override void Print()
         {
             Console.WriteLine($"Fruit named {Name} is {Color} and contain {_vitaminC} grams of Vitamin C!");
+        }
+
+        public override void Input(StreamReader reader)
+        {
+            base.Input(reader);
+            VitaminC = int.Parse(reader.ReadLine());
+        }
+
+        public override void Print(StreamWriter writer)
+        {
+            base.Print(writer);
+            writer.WriteLine(VitaminC);
         }
     }
 }
